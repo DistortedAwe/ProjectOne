@@ -8,11 +8,22 @@
         <script src="./script.js"></script>
     </head>
     <body>
-        <h1>Create Component</h1>
-        <h1>Hello, my name is <span id="name"></span></h1>
+        <form id="input" action="./action_page.php">
+            input 1: <input type="text" name="fname" value="test1"><br>
+            input 2: <input type="text" name="lname" value="test2"><br><br>
+        </form>
+        <button onclick="showInput()">show</button>
+        <p id="output"></p>
         <script>
-            let name = "Nathan";
-            document.getElementById("name").innerHTML = name;
+            function showInput() {
+                var x = document.getElementById("input");
+                var text = "";
+                var i;
+                for (i = 0; i < x.length ;i++) {
+                    text += x.elements[i].value + "<br>";
+                }
+                document.getElementById("output").innerHTML = text;
+            }
         </script>
-        </body>
+    </body>
 </html>
