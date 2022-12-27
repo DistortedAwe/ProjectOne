@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Feature Test</title>
+</head>
 <body>
-  <h1><a href="./index.html">home page</a></h1>
-<form id="frm1" action="/action_page.php">
-  First name: <input type="text" name="fname" value="Donald"><br>
-  Last name: <input type="text" name="lname" value="Duck"><br><br>
-</form> 
-<button onclick="myFunction()">show</button>
+    <p>select your size:</p>
+    <div id="group"></div>
 
-<p id="demo"></p>
+    <p id="output"></p>
+    <br>
+    <br>
+    <p>enter text</p>
+    <div id="group2"></div>
 
-<script>
-function myFunction() {
-  var formItems = document.getElementById("frm1");
-  var text = "";
-  var i;
-  for (i = 0; i < formItems.length ;i++) {
-    text += formItems.elements[i].value + "<br>";
-  }
-  document.getElementById("demo").innerHTML = text;
-}
-</script>
+    <p id="output2"></p>
 
+    <script>
+        const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+
+        const group2 = document.querySelector("#group2");
+        group2.innerHTML = `<div>
+            <input type="text" name="instantInput" id="instantiInput">
+            <label for=""`
+            console
+
+        // generate the radio groups
+        const group = document.querySelector("#group");
+        group.innerHTML = sizes.map((size) => `<div>
+                <input type="radio" name="size" value="${size}" id="${size}">
+                <label for="${size}">${size}</label>
+            </div>`).join(' ');
+            console.log(group.innerHTML)
+
+        // add an event listener for the change event
+        const radioButtons = document.querySelectorAll('input[name="size"]');
+        for(const radioButton of radioButtons){
+            radioButton.addEventListener('change', showSelected);
+        };
+
+        function showSelected(e) {
+            console.log(e);
+            if (this.checked) {
+                document.querySelector('#output').innerText = `You selected ${this.value}`;
+            }
+        }
+    </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
         <script src="./script.js"></script>
     </head>
     <body>
-        <h1><a href="./index2.html">index2 alternative testing</a></h1>
+        <h1><a href="./index2.html">index2 (alternative testing)</a></h1>
         <br>
         <br>
         <br>
@@ -18,8 +18,38 @@
         <br>
         <br>
         <br>
-        <h1>choose between list of radio buttons</h1>
+        <h1>radio with instant output</h1>
+        <div id="group"></div>
 
+        <p id="output"></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>choose between list of radio buttons with a show button</h1>
+        <form id="radioList">
+            <label for="zero"> option 0<input type="radio" name="radioList" value="zero" id="zero"></label>
+            <label for="one"> option 1<input type="radio" name="radioList" value="one" id="one"></label>
+            <label for="two"> option 2<input type="radio" name="radioList" value="two" id="two"></label>
+        </form>
+        <p>
+            <button onclick="runRadioList()">show selected value</button>
+        </p>
+        <p id="radioListOutput"></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <h1>Get and output 1 item</h1>
         <input id="oneInput" type="text">
         <button onclick="outputOneItem()">show</button>
@@ -34,9 +64,9 @@
         <br>
         <br>
         <h1>Get and output 2 items from a form </h1>
-        <form id="input" action="./action_page.php">
-            input 1: <input type="text"><br>
-            input 2: <input type="text"><br><br>
+        <form id="input">
+            <label> input 1: <input type="text"></label><br>
+            <label> input 2: <input type="text"></label><br><br>
         </form>
         <button onclick="outputTwoItems()">show</button>
         <p id="outputTwoItems"></p>
