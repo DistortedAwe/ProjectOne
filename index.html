@@ -8,7 +8,8 @@
         <script src="./script.js"></script>
     </head>
     <body>
-        <h1><a href="./index2.html">index2 (alternative testing)</a></h1>
+        <h1>Project One</h1>
+        <h2><a href="./index2.html">index2 (alternative testing)</a></h2>
         <br>
         <br>
         <br>
@@ -22,6 +23,43 @@
         <div id="group"></div>
 
         <p id="output"></p>
+        <br>
+        <br>
+        <p>enter text</p>
+        <div id="group2"></div>
+
+        <p id="output2"></p>
+
+        <script>
+            const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+
+            const group2 = document.querySelector("#group2");
+            group2.innerHTML = `<div>
+                <input type="text" name="instantInput" id="instantiInput">
+                <label for=""`
+                console
+
+            // generate the radio groups
+            const group = document.querySelector("#group");
+            group.innerHTML = sizes.map((size) => `<div>
+                    <input type="radio" name="size" value="${size}" id="${size}">
+                    <label for="${size}">${size}</label>
+                </div>`).join(' ');
+                console.log(group.innerHTML)
+
+            // add an event listener for the change event
+            const radioButtons = document.querySelectorAll('input[name="size"]');
+            for(const radioButton of radioButtons){
+                radioButton.addEventListener('change', showSelected);
+            };
+
+            function showSelected(e) {
+                console.log(e);
+                if (this.checked) {
+                    document.querySelector('#output').innerText = `You selected ${this.value}`;
+                }
+            }
+        </script>
         <br>
         <br>
         <br>
@@ -63,7 +101,7 @@
         <br>
         <br>
         <br>
-        <h1>Get and output 2 items from a form </h1>
+        <h1>Get and output 2 items with a h1 tag</h1>
         <form id="input">
             <label> input 1: <input type="text"></label><br>
             <label> input 2: <input type="text"></label><br><br>
